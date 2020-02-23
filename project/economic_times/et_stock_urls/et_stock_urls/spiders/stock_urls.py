@@ -8,17 +8,14 @@ import re
 from parsel import Selector
 
 
-
-
-class StockDataSpider(scrapy.Spider):
-    name = 'stock_data'
+class StockUrlsSpider(scrapy.Spider):
+    name = 'stock_urls'
     base_url = 'https://economictimes.indiatimes.com/'
 
     def __init__(self):
         options = Options()
         options.headless = True
-        self.driver = webdriver.Chrome('/home/nandagopal/hti/scrapy/chromedriver',
-                                       chrome_options=options)
+        self.driver = webdriver.Chrome('/home/nandagopal/hti/scrapy/chromedriver', chrome_options=options)
 
     def start_requests(self):
         for stock in ['hdfc bank', 'sbin']:
@@ -44,17 +41,5 @@ class StockDataSpider(scrapy.Spider):
         urls['balance_sheets'] = content.xpath("//a[text()='Balance Sheet']/@href").extract_first()
         urls['nine_months_results'] = content.xpath("//a[text()='Nine Monthly Results']/@href").extract_first()
         urls['share_holding_pattern'] = content.xpath("//a[text()='Shareholding Pattern']/@href").extract_first()
-        for k, v in urls.items():
-            print(k, "---->" ,v)
         yield urls
 
-    def get_stock_url(self, url, stock):
-        driver = self.driver
-        driver.get(url)
-        search_box = driver.find_element_by_xpath('//input[@class="inputBox"]')
-        search_box.click()
-        search_box.send_keys(stock)
-        search_box.send_keys(Keys.ENTER)
-        time.sleep(1)
-        # company_id = re.findall(r'companyid-(.*).cms', str(driver.current_url))[0]
-        return driver.current_url

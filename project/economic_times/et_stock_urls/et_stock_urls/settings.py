@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for economic_times project
+# Scrapy settings for et_stock_urls project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'economic_times'
+BOT_NAME = 'et_stock_urls'
 
-SPIDER_MODULES = ['economic_times.spiders']
-NEWSPIDER_MODULE = 'economic_times.spiders'
+SPIDER_MODULES = ['et_stock_urls.spiders']
+NEWSPIDER_MODULE = 'et_stock_urls.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'economic_times (+http://www.yourdomain.com)'
+#USER_AGENT = 'et_stock_urls (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'economic_times.middlewares.EconomicTimesSpiderMiddleware': 543,
+#    'et_stock_urls.middlewares.EconomicTimesSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'economic_times.middlewares.EconomicTimesDownloaderMiddleware': 543,
+#    'et_stock_urls.middlewares.EconomicTimesDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,9 +64,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'economic_times.pipelines.EconomicTimesPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'et_stock_urls.pipelines.EconomicTimesPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
