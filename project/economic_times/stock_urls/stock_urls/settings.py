@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for et_stock_urls project
+# Scrapy settings for stock_urls project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'et_stock_urls'
+BOT_NAME = 'stock_urls'
 
-SPIDER_MODULES = ['et_stock_urls.spiders']
-NEWSPIDER_MODULE = 'et_stock_urls.spiders'
+SPIDER_MODULES = ['stock_urls.spiders']
+NEWSPIDER_MODULE = 'stock_urls.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'et_stock_urls (+http://www.yourdomain.com)'
+#USER_AGENT = 'stock_urls (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'et_stock_urls.middlewares.EconomicTimesSpiderMiddleware': 543,
+#    'stock_urls.middlewares.EconomicTimesSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'et_stock_urls.middlewares.EconomicTimesDownloaderMiddleware': 543,
+#    'stock_urls.middlewares.EconomicTimesDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'et_stock_urls.pipelines.EconomicTimesPipeline': 300,
+   'stock_urls.pipelines.EconomicTimesPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
